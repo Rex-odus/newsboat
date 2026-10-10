@@ -6,6 +6,11 @@ Lists below only mention user-visible changes, but the full list of contributors
 for this release also includes TK
 
 ### Added
+- **Arrow key navigation** (fork feature): ENTER opens browser, RIGHT navigates deeper, LEFT goes back
+    - In feed list: ENTER=browser, RIGHT=article list, LEFT=ignored
+    - In article list: ENTER=browser, RIGHT=article view, LEFT=back to feed list  
+    - In article view: ENTER=browser, LEFT=back to article list
+    - q/Q still quits program (only in main screen with confirmation)
 ### Changed
 - Bumped minimum supported Rust version to 1.97.0
 ### Deprecated

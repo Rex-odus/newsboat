@@ -135,6 +135,8 @@ enum Operation {
 	OP_SK_HALF_PAGE_DOWN,
 	OP_SK_HOME,
 	OP_SK_END,
+	OP_SK_RIGHT,
+	OP_SK_LEFT,
 
 	OP_SK_MAX,
 

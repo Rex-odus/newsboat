@@ -1,4 +1,11 @@
-Newsboat [![Cirrus CI Build Status](https://api.cirrus-ci.com/github/newsboat/newsboat.svg)](https://cirrus-ci.com/github/newsboat/newsboat) [![GitHub Actions: Coveralls status](https://github.com/newsboat/newsboat/workflows/Coveralls/badge.svg)](https://github.com/newsboat/newsboat/actions?query=workflow%3ACoveralls) [![Coverage Status](https://coveralls.io/repos/github/newsboat/newsboat/badge.svg?branch=master)](https://coveralls.io/github/newsboat/newsboat?branch=master) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3328/badge)](https://bestpractices.coreinfrastructure.org/projects/3328)
+# Newsboat with Arrow Key Navigation
+
+> **This is a fork of [Newsboat](https://github.com/newsboat/newsboat) with intuitive arrow key navigation.**
+>
+> Original project: https://github.com/newsboat/newsboat
+>
+> For the original, unmodified Newsboat, please visit the upstream repository.
+
 ========
 
 <a href="https://newsboat.org">
@@ -12,6 +19,21 @@ Newsboat [![Cirrus CI Build Status](https://api.cirrus-ci.com/github/newsboat/ne
 
 Newsboat is an RSS/Atom feed reader for the text console. It's an actively
 maintained fork of Newsbeuter.
+
+## Arrow Key Navigation (Fork Feature)
+
+This version adds intuitive arrow key navigation:
+
+| Key | Action |
+|-----|--------|
+| **ENTER** | Open article/feed in external browser |
+| **→ RIGHT** | Navigate deeper (feed → articles → view) |
+| **← LEFT** | Go back to previous screen |
+| **q** | Quit / return to previous dialog |
+
+In the main feed list, LEFT is ignored (does nothing). This makes navigation much easier than memorizing keyboard shortcuts.
+
+---
 
 A feed reader pulls updates directly from sites like blogs and news agencies,
 and lets you review them in a single interface. Many times, the feed includes

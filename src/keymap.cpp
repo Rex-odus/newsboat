@@ -744,6 +744,21 @@ static const std::vector<OpDesc> opdescs = {
 	},
 
 	{
+		OP_SK_RIGHT,
+		"right",
+		KeyCombination("RIGHT"),
+		translatable("Open selected feed/article (navigate deeper)"),
+		KM_SYSKEYS | KM_FEEDLIST | KM_ARTICLELIST | KM_SEARCHRESULTSLIST
+	},
+	{
+		OP_SK_LEFT,
+		"left",
+		KeyCombination("LEFT"),
+		translatable("Go back to previous screen/Quit"),
+		KM_SYSKEYS | KM_FEEDLIST | KM_ARTICLELIST | KM_SEARCHRESULTSLIST | KM_ARTICLE | KM_URLVIEW | KM_DIALOGS
+	},
+
+	{
 		OP_SET,
 		"set",
 		{},
@@ -798,6 +813,22 @@ KeyMap::KeyMap(unsigned flags)
 	apply_bindkey(context_keymaps[Dialog::Help], KeyCombination("SPACE"), OP_SK_PGDOWN);
 	apply_bindkey(context_keymaps[Dialog::Article], KeyCombination("b"), OP_SK_PGUP);
 	apply_bindkey(context_keymaps[Dialog::Article], KeyCombination("SPACE"), OP_SK_PGDOWN);
+
+	// Pijltjes-navigatie: ENTER opent browser in navigation contexts
+	apply_bindkey(context_keymaps[Dialog::FeedList], KeyCombination("ENTER"), OP_OPENINBROWSER);
+	apply_bindkey(context_keymaps[Dialog::ArticleList], KeyCombination("ENTER"), OP_OPENINBROWSER);
+	apply_bindkey(context_keymaps[Dialog::SearchResultsList], KeyCombination("ENTER"), OP_OPENINBROWSER);
+
+	// RIGHT = navigeer dieper (originele ENTER gedrag)
+	apply_bindkey(context_keymaps[Dialog::FeedList], KeyCombination("RIGHT"), OP_OPEN);
+	apply_bindkey(context_keymaps[Dialog::ArticleList], KeyCombination("RIGHT"), OP_OPEN);
+	apply_bindkey(context_keymaps[Dialog::SearchResultsList], KeyCombination("RIGHT"), OP_OPEN);
+
+	// LEFT = terug/quit (sluit programma niet af, alleen q/Q doet dat)
+	// FeedList: LEFT wordt genegeerd (geen actie in hoofdscherm)
+	apply_bindkey(context_keymaps[Dialog::ArticleList], KeyCombination("LEFT"), OP_QUIT);
+	apply_bindkey(context_keymaps[Dialog::SearchResultsList], KeyCombination("LEFT"), OP_QUIT);
+	apply_bindkey(context_keymaps[Dialog::Article], KeyCombination("LEFT"), OP_QUIT);
 }
 
 HelpInfo KeyMap::get_help_info(Dialog context)

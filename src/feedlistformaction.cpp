@@ -659,7 +659,7 @@ std::vector<KeyMapHintEntry> FeedListFormAction::get_keymap_hint() const
 		hints.push_back({OP_CLEARTAG, _("Clear tag")});
 	}
 	hints.push_back({OP_QUIT, _("Quit")});
-	hints.push_back({OP_OPEN, _("Open")});
+	hints.push_back({OP_OPENINBROWSER, _("Open in Browser")});
 	hints.push_back({OP_NEXTUNREAD, _("Next Unread")});
 	hints.push_back({OP_RELOAD, _("Reload")});
 	hints.push_back({OP_RELOADALL, _("Reload All")});

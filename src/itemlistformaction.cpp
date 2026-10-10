@@ -1387,7 +1387,7 @@ std::vector<KeyMapHintEntry> ItemListFormAction::get_keymap_hint() const
 		hints.push_back({OP_CLEARFILTER, _("Clear filter")});
 	}
 	hints.push_back({OP_QUIT, _("Quit")});
-	hints.push_back({OP_OPEN, _("Open")});
+	hints.push_back({OP_OPENINBROWSER, _("Open in Browser")});
 	hints.push_back({OP_SAVE, _("Save")});
 	hints.push_back({OP_RELOAD, _("Reload")});
 	hints.push_back({OP_NEXTUNREAD, _("Next Unread")});

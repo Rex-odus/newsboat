@@ -1,4 +1,4 @@
-open||kbd:[ENTER]||Open the currently selected feed or article.
+open||kbd:[RIGHT]||Open selected feed/article (navigate deeper into list).
 quit||kbd:[Q]||Quit the program or return to the previous dialog (depending on the context).
 hard-quit||kbd:[Shift+Q]||Quit the program without confirmation.
 reload||kbd:[R]||Reload the currently selected feed.
@@ -13,7 +13,7 @@ prev-unread||kbd:[P]||Jump to the previous unread article.
 next||kbd:[Shift+J]||Jump to next list entry.
 prev||kbd:[Shift+K]||Jump to previous list entry.
 random-unread||kbd:[Ctrl+K]||Jump to a random unread article.
-open-in-browser||kbd:[O]||Use browser to open the URL associated with the current article, feed, or entry in the URL view.
+open-in-browser||kbd:[ENTER], kbd:[O]||Use browser to open the URL associated with the current article, feed, or entry in the URL view.
 open-in-browser-noninteractively||n/a||Use browser to open the URL associated with the current article, feed, or entry in the URL view. This operation works similar to <<open-in-browser,`open-in-browser`>>, but the output of the browser (stdout and stderr) is not shown, and the browser doesn't receive keyboard input. You would probably add `&` at the end of the <<browser,`browser`>> command to put it into background, too.
 open-in-browser-and-mark-read||kbd:[Shift+O]||Use browser to open the URL associated with the current article, or entry in the URL view. When used in the article list, it will also mark the article as read.
 open-all-unread-in-browser||n/a||Open all the unread URLs in the current feed.
@@ -78,6 +78,8 @@ halfpageup||n/a||Go up half a page.
 halfpagedown||n/a||Go down half a page.
 home||kbd:[HOME]||Go to the first item in the list.
 end||kbd:[END]||Go to the last item in the list.
+right||kbd:[RIGHT]||Open selected feed/article (navigate deeper into list).
+left||kbd:[LEFT]||Go back to previous screen / quit confirmation.
 macro-prefix||kbd:[,]||Initiate macro execution. The next key press selects the actual macro and runs it.
 switch-focus||kbd:[TAB]||Switch focus between widgets. This is currently only applicable to the `filebrowser` and `dirbrowser` contexts.
 goto-title||n/a||Go to item whose title contains the specified string (case-insensitive).

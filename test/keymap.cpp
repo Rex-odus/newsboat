@@ -49,7 +49,7 @@ TEST_CASE("get_operation()", "[KeyMap]")
 	check_unbound(k, KeyCombination("x", ShiftState::Shift), Dialog::FeedList);
 	check_unbound(k, KeyCombination(""), Dialog::FeedList);
 	REQUIRE(check_single_command_binding(k, KeyCombination("ENTER"),
-			Dialog::FeedList) == OP_OPEN);
+			Dialog::FeedList) == OP_OPENINBROWSER);
 
 	SECTION("Returns OP_NIL after unset_key()") {
 		k.unset_key(KeyCombination("ENTER"), AllDialogs());
@@ -98,8 +98,8 @@ TEST_CASE("unset_key() and set_key()", "[KeyMap]")
 	KeyMap k(KM_NEWSBOAT);
 
 	REQUIRE(check_single_command_binding(k, KeyCombination("ENTER"),
-			Dialog::FeedList) == OP_OPEN);
-	REQUIRE(k.get_keys(OP_OPEN, Dialog::FeedList) == std::vector<KeyCombination>({KeyCombination("ENTER")}));
+			Dialog::FeedList) == OP_OPENINBROWSER);
+	REQUIRE(k.get_keys(OP_OPENINBROWSER, Dialog::FeedList) == std::vector<KeyCombination>({KeyCombination("ENTER")}));
 
 	SECTION("unset_key() removes the mapping") {
 		k.unset_key(KeyCombination("ENTER"), AllDialogs());
@@ -184,7 +184,7 @@ TEST_CASE("get_keys()", "[KeyMap]")
 	KeyMap k(KM_NEWSBOAT);
 
 	SECTION("Retrieves general bindings") {
-		REQUIRE(k.get_keys(OP_OPEN, Dialog::FeedList) == std::vector<KeyCombination>({KeyCombination("ENTER")}));
+		REQUIRE(k.get_keys(OP_OPENINBROWSER, Dialog::FeedList) == std::vector<KeyCombination>({KeyCombination("ENTER")}));
 		REQUIRE(k.get_keys(OP_TOGGLEITEMREAD,
 				Dialog::ArticleList) == std::vector<KeyCombination>({KeyCombination("n", ShiftState::Shift)}));
 	}
@@ -322,7 +322,7 @@ TEST_CASE("handle_action() for unbind-key", "[KeyMap]")
 
 	SECTION("unbind-key uses 'old style key binding' special key syntax") {
 		REQUIRE(check_single_command_binding(k, KeyCombination("ENTER"),
-				Dialog::FeedList) == OP_OPEN);
+				Dialog::FeedList) == OP_OPENINBROWSER);
 
 		// New style `bind` would specify this as `<ENTER>` instead
 		k.handle_action("unbind-key", "ENTER");
