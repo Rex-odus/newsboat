@@ -16,7 +16,7 @@ This fork adds **intuitive arrow key navigation** to make Newsboat easier to use
 | Context | ENTER | RIGHT → | LEFT ← | q/Q |
 |---------|-------|---------|--------|-----|
 | **Feed List** (main screen) | Opens feed URL in browser | Go to article list | **Ignored** (no action) | Quit program (with confirmation) |
-| **Article List** | Opens article URL in browser | Go to article view | Back to feed list | Back to feed list |
+| **Article List** | Opens article in browser + **marks as read** | Go to article view | Back to feed list | Back to feed list |
 | **Article View** | Opens article URL in browser | - | Back to article list | Back to article list |
 
 ### Why These Changes?

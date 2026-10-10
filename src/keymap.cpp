@@ -816,7 +816,7 @@ KeyMap::KeyMap(unsigned flags)
 
 	// Pijltjes-navigatie: ENTER opent browser in navigation contexts
 	apply_bindkey(context_keymaps[Dialog::FeedList], KeyCombination("ENTER"), OP_OPENINBROWSER);
-	apply_bindkey(context_keymaps[Dialog::ArticleList], KeyCombination("ENTER"), OP_OPENINBROWSER);
+	apply_bindkey(context_keymaps[Dialog::ArticleList], KeyCombination("ENTER"), OP_OPENBROWSER_AND_MARK);
 	apply_bindkey(context_keymaps[Dialog::SearchResultsList], KeyCombination("ENTER"), OP_OPENINBROWSER);
 
 	// RIGHT = navigeer dieper (originele ENTER gedrag)

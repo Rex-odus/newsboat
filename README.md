@@ -26,7 +26,8 @@ This version adds intuitive arrow key navigation:
 
 | Key | Action |
 |-----|--------|
-| **ENTER** | Open article/feed in external browser |
+| **ENTER** (feed list) | Open feed URL in browser |
+| **ENTER** (article list) | Open article in browser + mark as read |
 | **→ RIGHT** | Navigate deeper (feed → articles → view) |
 | **← LEFT** | Go back to previous screen |
 | **q** | Quit / return to previous dialog |
